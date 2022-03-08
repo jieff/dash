@@ -17,7 +17,7 @@
                     <tr>
                         <th>Nome</th>
                         <th>Preço</th>
-                        <th>Açoes</th>
+                        <th width="50">Ações</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -34,6 +34,9 @@
                     @endforeach
                 </tbody>
             </table>
+        </div>
+        <div class="card-footer">
+            {!! $plans->links() !!}
         </div>
     </div>
 @stop
