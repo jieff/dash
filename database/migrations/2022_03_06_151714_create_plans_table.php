@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name')->unique();
             $table->string('url')->unique();
             $table->double('price', 10, 2);
-            $table->string('descpiption')->nullable();
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }

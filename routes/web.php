@@ -14,6 +14,9 @@ use App\Http\Controllers\Admin\PlanController;
 |
 */
 
+
+Route::post('admin/plans', [PlanController::class,'store']);
+Route::get('admin/plans/create', [PlanController::class, 'create']);
 Route::get('admin/plans', [PlanController::class, 'index']);
 
 Route::get('/', function () {
