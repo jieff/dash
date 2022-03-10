@@ -3,7 +3,7 @@
 @section('title', 'Planos') 
 
 @section('content_header')
-    <h1> Planos <a href="plans/create" class="btn btn-dark">ADD</a></h1>
+    <h1> Planos <a href="{{ route('plans.index') }}" class="btn btn-dark">ADD</a></h1>
 @stop
 
 @section('content')
@@ -29,8 +29,8 @@
                             <td>
                                 {{ $plan->price }}
                             </td>
-                            <td>
-                                <a href="" class="btn btn-warning">VER</a>
+                            <td style="width-10px;">
+                                <a href="{{ route('plans.show', $plan->url )}}" class="btn btn-warning">VER</a>
                             </td>
                         </tr>
                         

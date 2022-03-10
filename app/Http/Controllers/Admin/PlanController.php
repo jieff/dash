@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Plan;
 use Illuminate\Http\Request;
 
+
 class PlanController extends Controller
 {
     private $repository;
@@ -38,6 +39,20 @@ class PlanController extends Controller
         $this->repository->create($data);
 
         return redirect('admin/plans');
+    }
+
+    public function show($url)
+    {
+        $plan = $this->repository->where('url', $url)->first();
+
+        if(!$plan)
+            return redirect()->back();
+        
+        return view('admin.pages.plans.show',[
+            'plan' => $plan
+        ]);
+
+        
     }
     
 }
