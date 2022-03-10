@@ -23,6 +23,8 @@ Route::post('admin/plans', [PlanController::class,'store'])->name('plans.store')
 Route::get('admin/plano/create', [PlanController::class, 'create'])->name('plano.create');
 Route::get('admin/plans', [PlanController::class, 'index'])->name('plans.index');
 
+Route::get('admin', [PlanController::class, 'index'])->name('admin.index');
+
 Route::get('/', function () {
     return view('welcome');
 });

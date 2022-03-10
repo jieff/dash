@@ -4,6 +4,14 @@
 
 @section('content_header')
     <h1> Planos <a href="{{ route('plano.create') }}" class="btn btn-dark">ADD</a></h1>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="{{ route('admin.index') }}" >Dashboard</a>         
+        </li>
+        <li class="breadcrumb-item">
+        <a href="{{ route('plans.index') }}" class="active">Planos</a>
+        </li>
+    </ol>
 @stop
 
 @section('content')
