@@ -28,7 +28,7 @@ class PlanController extends Controller
     }
 
     public function create(){
-
+        
         return view('admin.pages.plans.create');
     }
 
@@ -68,6 +68,14 @@ class PlanController extends Controller
         
     }
 
+    public function search(Request $request)
+    {
+        $plans = $this->repository->search($request->filter);
+
+        return view('admin.pages.plans.index', [
+            'plans' => $plans,
+        ]);
+    }
 
     
 }
