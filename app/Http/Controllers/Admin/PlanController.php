@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
 use App\Models\Plan;
 use Illuminate\Http\Request;
@@ -19,8 +18,8 @@ class PlanController extends Controller
 
     }
 
-    public function index(){
-
+    public function index()
+    {
         $plans = $this->repository->latest()->paginate(5);
 
        return view('admin.pages.plans.index', [
@@ -28,16 +27,14 @@ class PlanController extends Controller
        ]);
     }
 
-    public function create(){
-        
+    public function create()
+    {   
         return view('admin.pages.plans.create');
     }
 
-    public function store(StoreUpdatePlan $request){
-
-        $data = $request->all();
-        $data['url'] = Str::kebab($request->name);
-        $this->repository->create($data);
+    public function store(StoreUpdatePlan $request)
+    {    
+        $this->repository->create($request->all());
 
         return redirect('admin/plans');
     }
@@ -51,9 +48,7 @@ class PlanController extends Controller
         
         return view('admin.pages.plans.show',[
             'plan' => $plan
-        ]);
-
-        
+        ]);   
     }
 
     public function destroy($url)
