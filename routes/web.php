@@ -16,11 +16,14 @@ use App\Http\Controllers\Admin\{
 |
 */
 
-Route::post('admin/plano/search', [PlanController::class, 'search'])->name('plano.search');
+
+Route::post('admin/plans/search', [PlanController::class, 'search'])->name('plans.search');
+Route::get('admin/plans/create', [PlanController::class, 'create'])->name('plans.create');
+Route::put('admin/plans/{url}', [PlanController::class, 'update'])->name('plans.update');
+Route::get('admin/plans/{url}/edit', [PlanController::class, 'edit'])->name('plans.edit');
 Route::delete('admin/plans/{url}', [PlanController::class, 'destroy'])->name('plans.destroy');
 Route::get('admin/plans/{url}', [PlanController::class, 'show'])->name('plans.show');
 Route::post('admin/plans', [PlanController::class,'store'])->name('plans.store');
-Route::get('admin/plano/create', [PlanController::class, 'create'])->name('plano.create');
 Route::get('admin/plans', [PlanController::class, 'index'])->name('plans.index');
 
 Route::get('admin', [PlanController::class, 'index'])->name('admin.index');
