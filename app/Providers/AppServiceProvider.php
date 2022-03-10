@@ -25,6 +25,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Plan::observer(PlanObserver::class);
+        Plan::observe(PlanObserver::class);
     }
 }
