@@ -52,9 +52,8 @@
                     @endforeach
                 </tbody>
             </table>
-            <div class="card-footer">
-                {{ $plans->links()}}
-            </div>
+
+                {{-- $plans->links()--}}           
         </div>
     </div>
     
