@@ -29,9 +29,8 @@
                             <td>
                                 {{ $detail->name }}
                             </td>
-                            <td style="width-10px;">
-                               <a href="{{ route('details.plans.index', $plan->url ) }}" class="btn btn-info">detalhes</a>
-                                <a href="{{ route('plans.edit', $plan->url )}}" class="btn btn-info">Editar</a>
+                            <td style="width-10px;">  
+                                <a href="{{ route('details.plans.edit', [$plan->url , $detail->id])}}" class="btn btn-info">Editar</a>
                                 <a href="{{ route('plans.show', $plan->url )}}" class="btn btn-warning">VER</a>
                             </td>
                         </tr>
