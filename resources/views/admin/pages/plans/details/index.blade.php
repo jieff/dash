@@ -10,7 +10,7 @@
         <li class="breadcrumb-item"><a href="{{ route('plans.show', $plan->url ) }}" >{{ $plan->name }}</a></li>
         <li class="breadcrumb-item"><a href="{{ route('details.plans.index', $plan->url ) }}">Detalhes</a></li>
     </ol>
-    <h1>Detalhes do plano {{ $plan->name}} <a href="{{ route('plans.create') }}" class="btn btn-dark">add</a></h1>
+    <h1>Detalhes do plano {{ $plan->name}} <a href="{{ route('details.plans.create', $plan->url) }}" class="btn btn-dark">add</a></h1>
 @stop
 
 @section('content')
@@ -30,7 +30,7 @@
                                 {{ $detail->name }}
                             </td>
                             <td style="width-10px;">
-                               <a href="{{ route('details.plan.index', $detail->url )}}" class="btn btn-info">detalhes</a>
+                               <a href="{{ route('details.plans.index', $plan->url ) }}" class="btn btn-info">detalhes</a>
                                 <a href="{{ route('plans.edit', $plan->url )}}" class="btn btn-info">Editar</a>
                                 <a href="{{ route('plans.show', $plan->url )}}" class="btn btn-warning">VER</a>
                             </td>
