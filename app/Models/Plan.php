@@ -2,12 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+//use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Plan extends Model
 {
-    use HasFactory;
+    //use HasFactory;
 
     protected $fillable = ['name', 'url', 'price', 'description'];
 
@@ -21,7 +21,7 @@ class Plan extends Model
     {
         $results = $this->where('name', 'LIKE', "%{$filter}%")
                         ->orWhere('description', 'LIKE', "%{$filter}%")
-                        ->paginate();
+                        ->get();
         return $results;
     }
 
