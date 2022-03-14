@@ -8,7 +8,7 @@
         <li class="breadcrumb-item"><a href="{{ route('admin.index') }}" >Dashboard</a></li>
         <li class="breadcrumb-item"><a href="{{ route('plans.index') }}" >Planos</a></li>
         <li class="breadcrumb-item"><a href="{{ route('plans.show', $plan->url) }}" >{{ $plan->name }}</a></li>
-        <li class="breadcrumb-item"><a href="{{ route('details.plans.create', $plan->url) }}" class="active" >Novo</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('details.plano.create', $plan->url) }}" class="active" >Novo</a></li>
     </ol>
     <h1>Adicionar novo detalhe ao plano {{$plan->name}} </h1>
 @stop
