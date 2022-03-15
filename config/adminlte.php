@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>Smart</b>Technology',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -230,7 +230,7 @@ return [
             'text'        => 'Planos',
             'url'         => 'admin/plans',
             'icon'        => 'fas fa-list-alt',
-            'label'       => 4,
+            //'label'       => 4,
             'label_color' => 'success',
         ],
         
