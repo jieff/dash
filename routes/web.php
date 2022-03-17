@@ -2,12 +2,17 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\{DetailPlanController, PlanController};
+use App\Http\Controllers\Admin\ACL\ProfileController;
 
 
 
+Route::prefix('admin')
+            ->group(function(){
 
-Route::prefix('admin')->group(function(){
-
+    /**
+     * Routes Profiles
+     */
+    Route::get('profile', [ProfileController::class, 'index' ])->name('profile.index');
     /**
      * Routes Details Plans
      */
