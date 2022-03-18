@@ -12,6 +12,8 @@ Route::prefix('admin')
     /**
      * Routes Profiles
      */
+    Route::post('profile/store', [ProfileController::class, 'store'])->name('profile.store');
+    Route::get('profile/create', [ProfileController::class, 'create' ])->name('profile.create');
     Route::get('profile', [ProfileController::class, 'index' ])->name('profile.index');
     /**
      * Routes Details Plans

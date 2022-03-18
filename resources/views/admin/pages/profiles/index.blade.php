@@ -1,9 +1,11 @@
+<!-- File: index of profiles -->
+        
 @extends('adminlte::page')
 
 @section('title', 'Perfis') 
 
 @section('content_header')
-    <h1> Perfis <a href="#create" class="btn btn-dark">ADD</a></h1>
+    <h1> Perfis <a href="{{ route('profile.create')}}" class="btn btn-dark">ADD</a></h1>
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
             <a href="{{ route('admin.index') }}" >Dashboard</a>         
@@ -44,8 +46,8 @@
                             
                             <td style="width-10px;">
                             <a href="{{--route('details.plans.index', $plan->url ) --}}" class="btn btn-primary">Detalhes</a>
-                                <a href="{{ route('profile.edit', $plan->url )}}" class="btn btn-info">Editar</a>
-                                <a href="{{ route('profile.show', $plan->url )}}" class="btn btn-warning">Ver</a>
+                                <a href="{{--route('profile.edit', $plan->url )--}}" class="btn btn-info">Editar</a>
+                                <a href="{{--route('profile.show', $plan->url )--}}" class="btn btn-warning">Ver</a>
                             </td>
                         </tr>     
                     @endforeach
