@@ -12,6 +12,8 @@ Route::prefix('admin')
     /**
      * Routes Profiles
      */
+    Route::delete('profile/{id}', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('profile/{id}', [ProfileController::class, 'show'])->name('profile.show');
     Route::put('profile/{id}', [ProfileController::class, 'update'])->name('profile.update');
     Route::get('profile/{id}/edit', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::post('profile/store', [ProfileController::class, 'store'])->name('profile.store');
