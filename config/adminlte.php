@@ -234,9 +234,16 @@ return [
             'label_color' => 'success',
         ],
         [
-            'text'        => 'Perfis',
+            'text'        => 'Perfil',
             'url'         => 'admin/profile',
             'icon'        => 'fas fa-address-book',
+            //'label'       => 4,
+            'label_color' => 'success',
+        ],
+        [
+            'text'        => 'Permissões',
+            'url'         => 'admin/permission',
+            'icon'        => 'fas fa-lock',
             //'label'       => 4,
             'label_color' => 'success',
         ],

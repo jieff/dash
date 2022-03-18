@@ -2,12 +2,25 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\{DetailPlanController, PlanController};
-use App\Http\Controllers\Admin\ACL\ProfileController;
+use App\Http\Controllers\Admin\ACL\{ProfileController, PermissionController};
 
 
 
 Route::prefix('admin')
             ->group(function(){
+
+
+    /**
+     * Routes Permissions
+     */
+    Route::get('perission/create', [PermissionController::class, 'create' ])->name('permission.create');
+    Route::any('permission/search', [PermissionController::class, 'search'])->name('permission.search');
+    Route::delete('permission/{id}', [PermissionController::class, 'destroy'])->name('permission.destroy');
+    Route::get('permission/{id}', [PermissionController::class, 'show'])->name('permission.show');
+    Route::put('permission/{id}', [PermissionController::class, 'update'])->name('permission.update');
+    Route::get('permission/{id}/edit', [PermissionController::class, 'edit'])->name('permission.edit');
+    Route::post('permission/store', [PermissionController::class, 'store'])->name('permission.store');
+    Route::get('permission', [PermissionController::class, 'index' ])->name('permission.index');
 
     /**
      * Routes Profiles
