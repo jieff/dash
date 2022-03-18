@@ -20,7 +20,7 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            <form action="{{--route('') --}}" method="POST" class="form form-inline">
+            <form action="{{ route('profile.search') }}" method="POST" class="form form-inline">
                 @CSRF
                 
                     <input type="text" name="filter" placeholder="Nome" class="form-control">
