@@ -20,7 +20,7 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            <form action="#search" method="POST" class="form form-inline">
+            <form action="{{--route('') --}}" method="POST" class="form form-inline">
                 @CSRF
                 
                     <input type="text" name="filter" placeholder="Nome" class="form-control">
@@ -45,8 +45,8 @@
                             </td>
                             
                             <td style="width-10px;">
-                            <a href="{{--route('details.plans.index', $plan->url ) --}}" class="btn btn-primary">Detalhes</a>
-                                <a href="{{--route('profile.edit', $plan->url )--}}" class="btn btn-info">Editar</a>
+                            <!--<a href="{{--route('details.plans.index', $plan->url ) --}}" class="btn btn-primary">Detalhes</a> -->
+                                <a href="{{route('profile.edit', $profile->id )}}" class="btn btn-info">Editar</a>
                                 <a href="{{--route('profile.show', $plan->url )--}}" class="btn btn-warning">Ver</a>
                             </td>
                         </tr>     

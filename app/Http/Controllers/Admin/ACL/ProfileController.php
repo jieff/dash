@@ -14,6 +14,7 @@ class ProfileController extends Controller
     public function __construct(Profile $profile)
     {
         $this->repository = $profile;
+    
     }
 
 
@@ -73,7 +74,12 @@ class ProfileController extends Controller
      */
     public function edit($id)
     {
-        //
+        
+       if (!$profile = $this->repository->find($id)) {
+            return redirect()->back();
+        }
+
+        return view('admin.pages.profiles.edit', compact('profile'));
     }
 
     /**
@@ -85,7 +91,13 @@ class ProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if(!$profile = $this->repository->find($id)){
+            return redirect()->back();
+        }
+
+        $profile->update($request->all());
+
+        return redirect()->route('profile.index');
     }
 
     /**
