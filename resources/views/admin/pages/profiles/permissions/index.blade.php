@@ -5,7 +5,7 @@
 @section('title', "Permissões do Perfil $profile->name ") 
 
 @section('content_header')
-    <h1> Perfil <a href="{{ route('profile.create')}}" class="btn btn-dark">ADD</a></h1>
+    <h1> Perfil <a href="{{ route('profile.create')}}" class="btn btn-dark"><i class="fas fa-plus"></i></a></h1>
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
             <a href="{{ route('admin.index') }}" >Dashboard</a>         
@@ -14,7 +14,7 @@
         <a href="{{ route('profile.index') }}" class="active">Perfil</a>
         </li>
     </ol>
-    <h1>Permissões do Perfil <strong>{{$profile->name}} </strong><a href="" class="btn btn-dark">ADD NOVA PERMISSÃO</a></h1>
+    <h1>Permissões do Perfil <strong>{{$profile->name}} </strong><a href="" class="btn btn-dark">NOVA PERMISSÃO<i class="fas fa-plus"></i></a></h1>
 @stop
 
 @section('content')
@@ -25,7 +25,7 @@
                 
                     <input type="text" name="filter" placeholder="Nome" class="form-control">
                           
-                <button type="submit" class="btn btn-dark">Filtrar</button>
+                <button type="submit" class="btn btn-dark">Filtrar <i class="fas fa-search"></i></button>
             </form>
         </div>
         <div class="card-body">

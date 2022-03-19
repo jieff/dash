@@ -9,7 +9,7 @@
         <li class="breadcrumb-item"><a href="{{ route('plans.show', $plan->url) }}" >{{ $plan->name }}</a></li>
         <li class="breadcrumb-item"><a href="{{ route('details.plans.edit', [$plan->url, $detail->id]) }}" class="active" >Detalhes</a></li>
     </ol>
-    <h1>Detalhes o detalhe {{ $detail->name }} </h1>
+    <h1>Detalhes o detalhe <strong>{{ $detail->name }} </strong></h1>
 @stop
 
 @section('content')
@@ -25,7 +25,9 @@
                 <form action="{{ route('details.plans.destroy', [$plan->url, $detail->id])}}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-danger">Deletar o detalhe {{ $detail->name }}, do plano {{ $plan->name}} </button>
+                    <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i>
+                        Deletar o detalhe {{ $detail->name }}, do plano {{ $plan->name}} 
+                    </button>
                 </form>
         </div>
     </div>

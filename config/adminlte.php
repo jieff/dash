@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'logo' => '<b>Smart</b>Technology',
+    'logo' => '<b>Smart</b>X',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -230,22 +230,19 @@ return [
             'text'        => 'Planos',
             'url'         => 'admin/plans',
             'icon'        => 'fas fa-list-alt',
-            //'label'       => 4,
-            'label_color' => 'success',
+            
         ],
         [
             'text'        => 'Perfil',
             'url'         => 'admin/profile',
             'icon'        => 'fas fa-address-book',
-            //'label'       => 4,
-            'label_color' => 'success',
+            
         ],
         [
             'text'        => 'Permissões',
             'url'         => 'admin/permission',
             'icon'        => 'fas fa-lock',
-            //'label'       => 4,
-            'label_color' => 'success',
+            
         ],
         
     ],

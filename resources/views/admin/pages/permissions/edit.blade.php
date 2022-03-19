@@ -3,7 +3,7 @@
 @section('title', "Editar o perfil {$permission->name}")
 
 @section ('content_header')
-    <h1>Editar a Permissão {{$permission->name}}</h1>
+    <h1>Editar a Permissão <strong>{{$permission->name}}</strong></h1>
 @stop
 
 @section('content')

@@ -3,7 +3,9 @@
 @section('title', 'Planos') 
 
 @section('content_header')
-    <h1> Planos <a href="{{ route('plans.create') }}" class="btn btn-dark">ADD</a></h1>
+    <h1> Planos<a href="{{ route('plans.create') }}" class="btn btn-dark"><i class="fas fa-plus"> adicionar</i></a>
+        <i class=""></i>
+    </h1>
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
             <a href="{{ route('admin.index') }}" >Dashboard</a>         
@@ -22,7 +24,7 @@
                 
                     <input type="text" name="filter" placeholder="Nome" class="form-control">
                           
-                <button type="submit" class="btn btn-dark">Filtrar</button>
+                <button type="submit" class="btn btn-dark"><i class="fa fa-search"> pesquisar</i></button>
             </form>
         </div>
         <div class="card-body">
@@ -31,7 +33,7 @@
                     <tr>
                         <th>Nome</th>
                         <th>Preço</th>
-                        <th width="250">Ações</th>
+                        <th width="400">Ações</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -44,9 +46,9 @@
                                R$ {{ $plan->price }}
                             </td>
                             <td style="width-10px;">
-                            <a href="{{ route('details.plans.index', $plan->url ) }}" class="btn btn-primary">Detalhes</a>
-                                <a href="{{ route('plans.edit', $plan->url )}}" class="btn btn-info">Editar</a>
-                                <a href="{{ route('plans.show', $plan->url )}}" class="btn btn-warning">Ver</a>
+                            <a href="{{ route('details.plans.index', $plan->url ) }}" class="btn btn-dark"><i class="fas fa-info-circle"> detalhes</i></a>
+                                <a href="{{ route('plans.edit', $plan->url )}}" class="btn btn-dark"><i class="fas fa-edit"> editar</i></a> 
+                                <a href="{{ route('plans.show', $plan->url )}}" class="btn btn-dark"><i class="fas fa-eye"> ver</i></a>
                             </td>
                         </tr>     
                     @endforeach

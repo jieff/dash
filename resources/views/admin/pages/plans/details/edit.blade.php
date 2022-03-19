@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', "Editar o detalhe {$detail->name} ") 
+@section('title', "Editar o detalhe  {{$detail->name}} ") 
 
 @section('content_header')
     

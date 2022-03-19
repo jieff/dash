@@ -16,13 +16,12 @@
                 </li>
                 <li>
                     <strong>Descrição:</strong> {{ $permission->description}}
-                </li>
             </ul>
             @include('admin.includes.alerts')
             <form action="{{ route('permission.destroy', $permission->id) }}" method="POST">
                 @method('DELETE')
                 @CSRF
-                <button type="submit" class="btn btn-danger">DELETAR A PERMISSÃO: {{ $permission->name }}</button>
+                <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i> DELETAR A PERMISSÃO: <strong>{{ $permission->name }}</strong></button>
             </form>
         </div>
     </div>

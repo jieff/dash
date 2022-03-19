@@ -3,7 +3,7 @@
 @section('title', "Editar o perfil {$profile->name}")
 
 @section ('content_header')
-    <h1>Editar o perfil {{$profile->name}}</h1>
+    <h1>Editar o perfil <strong>{{$profile->name}}</strong></h1>
 @stop
 
 @section('content')

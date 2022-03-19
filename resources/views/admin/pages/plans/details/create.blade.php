@@ -10,7 +10,7 @@
         <li class="breadcrumb-item"><a href="{{ route('plans.show', $plan->url) }}" >{{ $plan->name }}</a></li>
         <li class="breadcrumb-item"><a href="{{ route('details.plano.create', $plan->url) }}" class="active" >Novo</a></li>
     </ol>
-    <h1>Adicionar novo detalhe ao plano {{$plan->name}} </h1>
+    <h1>Adicionar novo detalhe ao plano <strong>{{$plan->name}} </strong></h1>
 @stop
 
 @section('content')
