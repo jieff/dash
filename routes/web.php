@@ -2,13 +2,18 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\{DetailPlanController, PlanController};
-use App\Http\Controllers\Admin\ACL\{ProfileController, PermissionController};
+use App\Http\Controllers\Admin\ACL\{ProfileController, PermissionController, PermissionProfileController};
 
 
 
 Route::prefix('admin')
             ->group(function(){
 
+
+    /**
+     *  Permission X Profile
+     */
+    Route::get('profiles/{id}/permissions', [PermissionProfileController::class, 'permissions'])->name('profiles.permissions');
 
     /**
      * Routes Permissions

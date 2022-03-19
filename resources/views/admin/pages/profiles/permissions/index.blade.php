@@ -2,7 +2,7 @@
         
 @extends('adminlte::page')
 
-@section('title', 'Perfil') 
+@section('title', "Permissões do Perfil $profile->name ") 
 
 @section('content_header')
     <h1> Perfil <a href="{{ route('profile.create')}}" class="btn btn-dark">ADD</a></h1>
@@ -14,7 +14,7 @@
         <a href="{{ route('profile.index') }}" class="active">Perfil</a>
         </li>
     </ol>
-    
+    <h1>Permissões do Perfil <strong>{{$profile->name}} </strong><a href="" class="btn btn-dark">ADD NOVA PERMISSÃO</a></h1>
 @stop
 
 @section('content')
@@ -38,16 +38,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($profiles as $profile)
+                    @foreach($permissions as $permission)
                         <tr>
                             <td>
-                                {{ $profile->name }}
+                                {{ $permission->name }}
                             </td>
                             
                             <td style="width-10px;">
                                 <a href="{{ route('profile.edit', $profile->id )}}" class="btn btn-info">Editar</a>
-                                <a href="{{ route('profile.show', $profile->id ) }}" class="btn btn-warning">Ver</a>
-                                <a href="{{ route('profiles.permissions', $profile->id ) }}" class="btn btn-warning"><i class="fas fa-lock"></i></a>
                             </td>
                         </tr>     
                     @endforeach
