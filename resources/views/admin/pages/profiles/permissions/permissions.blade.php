@@ -1,4 +1,4 @@
-<!-- File: index of profiles -->
+<!-- File: permissions of profiles/premissions -->
         
 @extends('adminlte::page')
 
@@ -14,7 +14,8 @@
         <a href="{{ route('profile.index') }}" class="active">Perfil</a>
         </li>
     </ol>
-    <h1>Permissões do Perfil <strong>{{$profile->name}} </strong><a href="" class="btn btn-dark">NOVA PERMISSÃO<i class="fas fa-plus"></i></a></h1>
+    <h1>Permissões do Perfil <strong>{{$profile->name}}</h1>
+    </strong><a href="{{ route('profiles.permissions.available', $profile->id) }}" class="btn btn-dark">NOVA PERMISSÃO<i class="fas fa-plus"></i></a>
 @stop
 
 @section('content')
@@ -50,10 +51,11 @@
                         </tr>     
                     @endforeach
                 </tbody>
-            </table>
-
-                {{-- $plans->links()--}}           
+            </table>             
         </div>
+            <div class="card-footer">
+                    {{-- $plans->links() --}}  
+            </div>
     </div>
     
 @stop

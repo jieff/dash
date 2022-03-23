@@ -1,4 +1,4 @@
-<!-- File: index of profiles -->
+<!-- File: index of permissions -->
         
 @extends('adminlte::page')
 
