@@ -37,7 +37,7 @@ class PermissionProfileController extends Controller
             return redirect()->back();
         }
         
-        $permissions = $this->permission->all();
+        $permissions = $profile->permissionsAvailable();
 
         return view('admin.pages.profiles.permissions.available', compact('profile', 'permissions'));
     }
