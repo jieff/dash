@@ -20,13 +20,22 @@
 
 @section('content')
     <div class="card">
+        <div class="card-header">
+            <form action="{{ route('profile.search') }}" method="POST" class="form form-inline">
+                @CSRF
+                
+                    <input type="text" name="filter" placeholder="Nome" class="form-control">
+                          
+                <button type="submit" class="btn btn-dark">Filtrar <i class="fas fa-search"></i></button>
+            </form>
+        </div>
         <div class="card-body">
             <table class="table table-condensed">
                 <thead>
                     <tr>
                         <th>Nome</th>
                       
-                        <th width="50">Ações</th>
+                        <th width="250">Ações</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -37,8 +46,7 @@
                             </td>
                             
                             <td style="width-10px;">
-                                <a href="{{ route('profiles.permission.detach', [$profile->id, $permission->id] )}}" class="btn btn-danger">
-                                    <i class="fas fa-trash"> Desvincular</i></a>
+                                <a href="{{ route('profile.edit', $profile->id )}}" class="btn btn-info">Editar</a>
                             </td>
                         </tr>     
                     @endforeach

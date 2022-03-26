@@ -4,30 +4,27 @@ namespace App\Http\Controllers\Admin\ACL;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\{Profile, Permission};
 
-class PermissionProfileController extends Controller
+class PlanProfileController extends Controller
 {
+    protected $plans, $profile;
 
-    protected $profile, $permission;
-
-    public function __construct(Profile $profile, Permission $permission)
+    public function __construct(Plan $plan, Profile $profile)
     {
+        $this->plan = $plan;
         $this->profile = $profile;
-        $this->permission = $permission;
     }
 
-    public function permissions($idProfile)
+    public function profiles($idPlan)
     {
-        $profile = $this->profile->with('permissions')->find($idProfile);
        
-        if(!$profile){
+        if(!$plan = $this->plan->with('plans')->find($idPlan)){
             return redirect()->back();
         }
         
-        $permissions = $profile->permissions;
+        $profiles = $plan->profile()->get();
 
-        return view('admin.pages.profiles.permissions.permissions', compact('profile', 'permissions'));
+        return view('admin.pages.plans.profiles.profiles', compact('plan', 'profiles'));
     }
 
     public function permissionsAvailable($idProfile)
@@ -37,7 +34,7 @@ class PermissionProfileController extends Controller
             return redirect()->back();
         }
         
-        $permissions = $this->permission->all();
+        $permissions = $profile->permissionsAvailable();
 
         return view('admin.pages.profiles.permissions.available', compact('profile', 'permissions'));
     }
