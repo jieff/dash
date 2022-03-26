@@ -35,7 +35,7 @@
                     <tr>
                         <th>Nome</th>
                       
-                        <th width="250">Ações</th>
+                        <th width="50">Ações</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -46,7 +46,7 @@
                             </td>
                             
                             <td style="width-10px;">
-                                <a href="{{ route('profile.edit', $profile->id )}}" class="btn btn-info">Editar</a>
+                                <a href="{{ route('profiles.permission.detach', [$profile->id , $permission->id])}}" class="btn btn-danger">Desvincular</a>
                             </td>
                         </tr>     
                     @endforeach

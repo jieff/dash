@@ -13,6 +13,7 @@ Route::prefix('admin')
     /**
      *  Permission X Profile
      */
+    Route::get('profiles/{idProfile}/permissions/{idPermission}/detach', [PermissionProfileController::class, 'detachPermissionProfile'])->name('profiles.permission.detach');
     Route::get('profiles/{id}/permissions/create', [PermissionProfileController::class, 'permissionsAvailable'])->name('profiles.permissions.available');
     Route::post('profiles/{id}/permissions', [PermissionProfileController::class, 'attachPermissionsProfile'])->name('profiles.permissions.attach');
     Route::get('profiles/{id}/permissions/create', [PermissionProfileController::class, 'permissionsAvailable'])->name('profiles.permissions.available');
@@ -21,7 +22,7 @@ Route::prefix('admin')
     /**
      * Routes Permissions
      */
-    //Route::get('perission/create', [PermissionController::class, 'create' ])->name('permission.create');
+    Route::get('perission/create', [PermissionController::class, 'create' ])->name('permission.create');
     Route::any('permission/search', [PermissionController::class, 'search'])->name('permission.search');
     Route::delete('permission/{id}', [PermissionController::class, 'destroy'])->name('permission.destroy');
     Route::get('permission/{id}', [PermissionController::class, 'show'])->name('permission.show');
